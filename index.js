@@ -6,8 +6,9 @@
  * each: Designed to loop over a collection, Array or Object, and applies the 
  * action Function to each value in the collection.
  * 
- * @param {Array or Object} collection
- * @param {Function} action
+ * @param {Array or Object} : The collection over which to iterate.
+ * @param {Function} : The Function to be applied to each value in the 
+ * collection
  */
 function each(collection, action) {
     if(Array.isArray(collection)) {
@@ -25,8 +26,8 @@ module.exports.each = each;
 
 /**
  * identity: Returns the value passed in.
- * @param {*} arg 
- * @return *
+ * @param {*} : Function takes in any value
+ * @return {*} : returns the value passed into [arg]
  */
 _.identity = function(arg) {
     return arg;
@@ -36,8 +37,8 @@ module.exports.identity = _.identity;
 
 /**
  * typeOf: Returns the type of the value passed in.
- * @param {*} arg
- * @return string
+ * @param {*} : Function takes in any value
+ * @return {string} : returns the type of [arg] as a string
  */
 _.typeOf = function(arg) {
     switch (typeof arg) {
@@ -71,9 +72,9 @@ module.exports.typeOf = _.typeOf;
 
 /**
  * first: Returns the first [num] elements in [arr].
- * @param {Array} arr 
- * @param {number} num 
- * @return {Array}
+* @param { Array }: Function takes in an input array.
+* @param { number }: Function takes in a number representing the number of first elements to access.
+* @return { Array }: returns an array of the first [num] elements in input array.
  * 
  */
 _.first = function(arr, num) {
@@ -90,9 +91,9 @@ module.exports.first = _.first;
 
 /**
  * last: Returns the last [num] elements in [arr].
- * @param {Array} arr 
- * @param {number} num 
- * @return {Array}
+ * @param {Array} : Function takes in an array
+ * @param {number} : Function takes in a number representing the number of last elements to access.
+ * @return {Array} : returns an array of the last [num] elements in input array
  */
 _.last = function(arr, num) {
     let retArr = [];
@@ -108,8 +109,9 @@ module.exports.last = _.last;
 
 /**
  * indexOf: Returns the index of [val] in [arr]. 
- * @param {Array} arr 
- * @param {*} val 
+ * @param {Array} : Function takes in an array 
+ * @param {*} : Function takes in a value to find within [arr]
+ * @return {number} : returns a number representing the index of [val] in [arr]
  */
 _.indexOf = function(arr, val) {
     for (let i = 0; i < arr.length; i++) {
@@ -122,8 +124,9 @@ module.exports.indexOf = _.indexOf;
 
 /**
  * contains: Returns whether or not [arr] contains [val].
- * @param {Array} arr 
- * @param {*} val 
+ * @param {Array} : Function takes in an array 
+ * @param {*} : Function takes in a value to look for in [arr]
+ * @return {boolean} : returns whether or not [arr] contains [val]
  */
 _.contains = function(arr, val) {
     let contains = false;
@@ -140,8 +143,8 @@ module.exports.contains = _.contains;
 
 /**
  * each: Applys [func] to every element in [coll].
- * @param {Array or Object} coll 
- * @param {function} func 
+ * @param {Array or Object} : Function takes in an array or an object 
+ * @param {function} : Function takes in a callback function to apply to each element in [coll]
  */
 _.each = function(coll, func) {
     if (Array.isArray(coll)) {
@@ -159,8 +162,8 @@ module.exports.each = _.each;
 
 /**
  * unique: Returns an array of all unique elements in [arr].
- * @param {Array} arr 
- * @returns {Array}
+ * @param {Array} : Function takes in an array 
+ * @returns {Array} : returns an array of all unique elements in [arr]
  */
 _.unique = function(arr) {
     let retArr = [];
@@ -174,9 +177,9 @@ module.exports.unique = _.unique;
 
 /**
  * filter: Returns an array of all elements in [arr] that resolve to True when passed into [func].
- * @param {Array} arr 
- * @param {Function} func 
- * @returns {Array}
+ * @param {Array} : Function takes in an array 
+ * @param {Function} : Function takes in a callback function to filter with
+ * @returns {Array} : returns an array containing all elements in [arr] that [func] resolves True for
  */
 _.filter = function(arr, func) {
     let retArr = [];
@@ -191,9 +194,9 @@ module.exports.filter = _.filter;
 
 /**
  * reject: Returns an array of all elements in [arr] that resolve to False when passed into [func].
- * @param {Array} arr 
- * @param {Function} func 
- * @returns {Array}
+ * @param {Array} : Function takes in an array 
+ * @param {Function} : Function takes in a callback function to filter with
+ * @returns {Array} : returns an array containing all elements in [arr] that [func] resolves False for
  */
 _.reject = function(arr, func) {
     let retArr = [];
@@ -208,9 +211,10 @@ module.exports.reject = _.reject;
 
 /**
  * partition: Returns an array composed of 2 subarrays based on the results each element in [arr] returns when passed into [func]. [[True], [False]]
- * @param {Array} arr 
- * @param {Function} func 
-*/
+ * @param {Array} : Function takes in an array 
+ * @param {Function} : Function takes in a callback function used to split the array
+ * @returns {Array} : returns an array containing 2 subarrays based on the result each element in [arr] returns when passed into [func].  [[True], [False]]
+*/ 
 _.partition = function(arr, func) {
     let bigArr = [];
     function part(arr, func, bool) {
@@ -230,9 +234,9 @@ module.exports.partition = _.partition;
 
 /**
  * map: Returns an array containing the results of each element in [coll] passed into [func].
- * @param {Array or Object} coll 
- * @param {Function} func 
- * @returns {Array or Object}
+ * @param {Array or Object} : Function takes in an Array or an Object 
+ * @param {Function} : Function takes in a callback function to return the results of 
+ * @returns {Array} : returns an array containing the results of each element in [coll] passed into [func]
  */
 _.map = function(coll, func) {
     let retArr = [];
@@ -252,9 +256,9 @@ module.exports.map = _.map;
 
 /**
  * pluck: Returns an array containing the value of [prop] for each object in [arr].
- * @param {Array} arr 
- * @param {String} prop 
- * @returns {Array}
+ * @param {Array} : Function takes in an array 
+ * @param {String} : Function takes in a string to search for in [arr]
+ * @returns {Array} : eturns an array containing the value of [prop] for each object in [arr]
  */
 _.pluck = function(arr, prop) {
     let retArr = [];
@@ -271,9 +275,9 @@ module.exports.pluck = _.pluck;
 
 /**
  * every: Returns whether or not [func] resolves True for every element in [coll].
- * @param {Array or Object} coll 
- * @param {Function} func 
- * @returns {boolean} 
+ * @param {Array or Object} : Function takes in an Array or an Object 
+ * @param {Function} : Function takes in a callback function to test [coll] with 
+ * @returns {boolean} : returns a boolean for whether or not [func] resolves True for every element in [coll]
  */
 _.every = function(coll, func) {
     if (Array.isArray(coll)) {
@@ -297,9 +301,9 @@ module.exports.every = _.every;
 
 /**
  * some: Returns whether or not at least one element in [coll] returns True when passed into [func].
- * @param {Array or Object} coll 
- * @param {Function} func 
- * @returns {boolean}
+ * @param {Array or Object} : Function takes in an Array or an Object 
+ * @param {Function} : Function takes in a callback function to test [coll] with 
+ * @returns {boolean} : returns a boolean for whether or not at least one element in [coll] returns True when passed into [func]
  */
 _.some = function(coll, func) {
     if (Array.isArray(coll)) {
@@ -324,10 +328,10 @@ module.exports.some = _.some;
 
 /**
  * reduce: Returns an value containing a summation of every value of [func] for each element in [arr], starting with seed.
- * @param {Array} arr 
- * @param {Function} func 
- * @param {*} seed 
- * @returns {*}
+ * @param {Array} : Function takes in an Array 
+ * @param {Function} : Function takes in a callback function to apply to each element in [arr] and add to the summation
+ * @param {*} seed : Function voluntarily takes a seed, using [arr][0] as the seed if one is not given and starting at [arr][1]
+ * @returns {*} : returns the summation of each value in [arr] passed through [func], plus the seed
  */
 _.reduce = function(arr, func, seed) {
     let val = seed;
@@ -346,8 +350,8 @@ module.exports.reduce = _.reduce;
 
 /**
  * extend: Returns the first object in [args] modified to contain the key value pairs of every other object in [args].
- * @param  {...any} args 
- * @returns {Object}
+ * @param  {...any} : Function takes in any amount of Objects 
+ * @returns {Object} : returns the first object in [args] modified to contain the key value pairs of every other object in [args]
  */
 _.extend = function(...args) {
     for (let i = 1; i < args.length; i++) {
